@@ -1,0 +1,72 @@
+/* Before refactor - duplicated @media removed */
+@media only screen {}
+
+@media only screen and (min-width: 340px) {}
+
+@media only screen and (min-width: 400px) {}
+
+@media (min-width:768px) {}
+@media only screen and (min-width:768px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+@media (min-width: 992px) {}
+@media only screen and (min-width:992px) {}
+
+
+/*****************************
+********After refactor********
+*****************************/
+
+/* This is for screen display only, excluding print display */
+@media only screen {}
+
+/*
+For browser window size of 340px and above
+Not sure which device is this for.
+Find out what "TTG-562" means. It could be an issue number
+*/
+@media (min-width: 340px) {} /*TTG-562*/
+
+/*
+For browser window size of 400px and above
+Not sure which device is this for.
+*/
+@media (min-width: 400px) {}
+
+/*
+For browser window size of 768px and above
+768px is the width of an iPad in portrait mode
+*/
+@media (min-width:768px) {}
+
+/*
+For browser window size between 768px and 991px
+Not sure what 991px is for.
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+/*
+For browser window size of 992px and above
+992px is the defined minimum desktop width in seamless
+*/
+@media (min-width: 992px) {}
+
+
+/* General comments */
+
+/*
+1. In the main-original.css, there are a lot of duplicated @media query entry points.
+This is generally not recommended as it is harder to maintain.
+
+2. Among all the defined media query entry points, there is a mixed usage of "@media" and "@media only screen".
+This is generally not recommended unless specifically required in the business requirements.
+It is an indication that the developer does not understand the difference between the two ...
+
+A better approach is to create a separate css file for media queries only.
+Also only define each media query entry point once.
+
+Nevertheless, for this task of reskining the existing TTG portal, my recommendaton is to follow the existing pattern and
+make minimum changes necessary. Use Chrome's "Web Developer" tool to avoid confusion created by the duplicated media
+query entry points.
+*/
