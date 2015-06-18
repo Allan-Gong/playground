@@ -118,7 +118,7 @@ version 0.3.23b
 
 @media (min-width:992px) {
     .header-container {
-        background:#2f3b15 url(large-masthead.png) no-repeat bottom center;
+        background:#2f3b15;
         min-height:170px;
         padding-top:45px;
         color:#FFF
@@ -154,7 +154,7 @@ header{
 header .sitenav {
     height:0; /* initial state - TTG-587 */
     overflow:hidden;
-    background:#F1F1F1;
+    background:#2f3b15;
     background: -moz-linear-gradient(left,  #e7e6e6 0%, #fcfcfc 50%, #e7e6e6 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e7e6e6), color-stop(50%,#fcfcfc), color-stop(100%,#e7e6e6)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(left,  #e7e6e6 0%,#fcfcfc 50%,#e7e6e6 100%); /* Chrome10+,Safari5.1+ */
@@ -179,10 +179,10 @@ header .sitenav {
 }
 
 
-header .sitenav > ul {
+.content-wrapper #main-nav {
     margin-top:0;
     color:#FFF;
-    background-color:#F1F1F1;
+    background-color:#516e15;
     list-style:none;
     margin:0;
     padding:0;
@@ -190,28 +190,32 @@ header .sitenav > ul {
 }
 
 @media only screen and (min-width:992px) {
-    header .sitenav > ul  {
-        position:absolute;
-        bottom:0;
-        width:100%;
+    .content-wrapper #main-nav > ul {
+        /*position:absolute;*/
+        /*bottom:0;*/
+        width:954px;
+        overflow: hidden;
+        margin: 0 auto;
     }
+
+    .content-wrapper #main-nav > ul li
+    {
+        float:left;
+        list-style-type: none;
+
+    }
+
+    /*.content-wrapper #main-nav > ul li:after*/
+    /*{*/
+    /*  content: ":";*/
+    /*}*/
 }
 
-header .sitenav > ul li{
-    list-style:none;
-    margin:0;
-    padding:0;
-    background-image:none;
-    display:block;
-    border-top:1px solid #CCC;
-    font-size:16px;
 
-.main-nav > ul
 
-}
 
 @media only screen and (min-width:992px) {
-    header .sitenav > ul li {
+    .content-wrapper #main-nav > ul li {
         position:relative;
         display:inline-block;
         border-top-width:0;
@@ -219,27 +223,28 @@ header .sitenav > ul li{
         font-size:15px;
     }
 
-    header .sitenav > ul li:after {
+    .content-wrapper #main-nav > ul li:after {
         position: absolute;
-        top: 8px;
+        top: 6px;
         right: -4px;
         content: ":";
         color: #CCC;
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 19px;
+        /*font-weight: bold;*/
     }
 
-    header .sitenav > ul li.last:after{
+    .content-wrapper #main-nav > ul li.last:after{
         content:'';
     }
 }
 
-header .sitenav > ul li a{
+.content-wrapper #main-nav > ul li a{
     display:block;
-    color: #257D1D;
+    color: #fff;
     padding:10px 20px;
     text-decoration:none;
-    text-transform:uppercase
+    text-transform:uppercase;
+
 
 }
 @media only screen and (min-width:992px) {
@@ -266,7 +271,7 @@ header .sitenav > ul li.last {
 }
 
 header .sitenav > ul li.last a {
-    color:#666;
+    color:#fff;
 }
 
 @media only screen and (min-width:992px) {
@@ -291,9 +296,9 @@ header .sitenav > ul li.last a {
 
 
 header .logo {
-    padding: 39px 0 0px 20px;
+    padding: 20px 0 20px 20px;
     width: 100%;
-    /*background-color: #FFF;*/
+    background-color: #2f3b15;
 }
 @media only screen and (min-width:992px) {
     header .logo {
@@ -922,7 +927,7 @@ footer ul li li{
 
 @media only screen and (min-width:992px) {
     .introduction h1.welcome{
-        font-size:3.2em;font-size:3.2rem;
+        font-size:2.2em;font-size:2.2rem;
         background:transparent;
         text-align:left;
         color:#28881F;
@@ -953,7 +958,7 @@ footer ul li li{
     }
 
     .introduction h2.welcome {
-        font-size:2.1em;font-size:2.1rem;
+        font-size:1.9em;font-size:1.9rem;
         line-height:1.1;
     }
 }
